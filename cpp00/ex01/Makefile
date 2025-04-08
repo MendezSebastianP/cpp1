@@ -1,6 +1,6 @@
-SRC = megaphone.cpp
+SRC = mainMPB.cpp PhoneBook.class.cpp Contact.class.cpp
 
-NAME = megaphone
+NAME = phonebook
 
 TRASH_DIR = .trash
 

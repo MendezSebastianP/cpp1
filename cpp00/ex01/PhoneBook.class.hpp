@@ -5,13 +5,14 @@
 
 class PhoneBook {
 public:
+    PhoneBook();
     void ADD_CONTACT(void);
-    int SEARCH_CONTACT(int index);
+    void SEARCH_CONTACT();
 
 private:
-    int ncontacts_ = 0;
-    int oldestcontact_ = 0;
-    int index_ = 0;
+    int ncontacts_;
+    int oldestcontact_;
+    int index_;
     Contact contact_[8];
 };
 

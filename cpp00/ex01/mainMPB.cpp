@@ -4,11 +4,11 @@
 
 #define START_MSG "Welcome to the Archaic Phonebook :)"
 #define BASE_MSG "Type \"ADD\" to save a new contact, \"SEARCH\" to find an existing contact, \"EXIT\" to quit the program"
-#define ADD_MSG "Adding a new contact..."
 #define INV_CMD "Invalid command, please try again"
-#define EXIT_MSG "Thaks for using ArchaicPhonebook! see you ;)"
+#define EXIT_MSG "Thaks for using Archaic Phonebook! see you ;)"
 
-int	main(int argc, char **argv)
+
+int	main(void)
 {
     std::string input;
     PhoneBook phonebook;
@@ -20,13 +20,10 @@ int	main(int argc, char **argv)
         std::cout << BASE_MSG  << std::endl;
         std::getline(std::cin, input);
         if (input == "ADD")
-        {
-            std::cout << ADD_MSG  << std::endl;
             phonebook.ADD_CONTACT();
-        }
         else if (input == "SEARCH")
         {
-
+            phonebook.SEARCH_CONTACT();
         }
         else if (input == "EXIT")
         {
