@@ -68,6 +68,8 @@ void	PhoneBook::SEARCH_CONTACT(void)
 					contact_[indexint - 1].printDetails();
 					return ;
 				}
+				else
+					std::cout << ERR_INPUT << std::endl;
 			}
 			else
 				std::cout << ERR_INPUT << std::endl;

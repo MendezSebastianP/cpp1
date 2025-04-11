@@ -8,11 +8,6 @@ HumanB::HumanB(std::string str) : name_(str), weapon_(NULL)
     this->name_ = str;
 }
 
-// HumanB::~HumanB( void )
-// {
-//     delete this->weapon_;
-// }
-
 void HumanB::setWeapon(Weapon &weapon)
 {
     this->weapon_ = &weapon;

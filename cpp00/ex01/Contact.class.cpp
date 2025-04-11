@@ -144,24 +144,27 @@ void	Contact::setIndex(int index)
 
 void	printcell(std::string str)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
 	std::cout << "|";
-	while (i < 9 && str[i])
+	
+	while (j + str.length() < 10)
+	{
+		std::cout << " ";
+		j++;
+	}
+	if (j > 0)
+		j--;
+	while (i + j < 9 && str[i])
 		std::cout << str[i++];
-	if (i == 9 && str.length() == 10)
-		std::cout << str[i++];
-	else if (i == 9 && str.length() > 10)
+	if (i == 9 && str.length() > 10)
 	{
 		std::cout << ".";
 		i++;
 	}
-	while (i < 10)
-	{
-		std::cout << " ";
-		i++;
+	else if (i + j == 9 && str.length() == 10)
+		std::cout << str[i++];
 	}
-}
 
 void	Contact::printContact(void)
 {
