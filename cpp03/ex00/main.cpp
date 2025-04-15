@@ -1,14 +1,17 @@
 #include <iostream>
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
 int main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	ClapTrap a( "Seb ");
+	ClapTrap b( a );
+	ClapTrap c;
+	
 	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	a.attack( "The corrector");
+	b.takeDamage(9);
+	b.beRepaired(3);
+	b.takeDamage(7);
+	c.beRepaired( 50 );
 	return 0;
 }

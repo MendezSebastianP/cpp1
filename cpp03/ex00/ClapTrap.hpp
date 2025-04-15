@@ -2,6 +2,7 @@
 # define CLAPTRAP_HPP
 # include <iostream>
 # include <cctype>
+# define MAX_HP 10
 
 class ClapTrap {
     public:
@@ -12,15 +13,15 @@ class ClapTrap {
 	ClapTrap( ClapTrap const &src);
 	ClapTrap & operator =( ClapTrap const & rhs);
 
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void attack( const std::string& target );
+	void takeDamage( unsigned int amount );
+	void beRepaired( unsigned int amount );
 
     private:
         std::string Name_;
-		int Hit_points_ = 10;
-		int Energy_points_ = 10;
-		int Attac_damage_ = 10;
+		int Hit_points_;
+		int Energy_points_;
+		int Attac_damage_;
 };
 
 

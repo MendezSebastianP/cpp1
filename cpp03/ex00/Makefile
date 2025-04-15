@@ -1,12 +1,12 @@
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp
 
-NAME = Fixed
+NAME = ClapTrap
 
 TRASH_DIR = .trash
 
 OBJ = $(addprefix $(TRASH_DIR)/, $(SRC:.cpp=.o))
 
-FLAGS = -std=c++98 -Wall -Werror -Wextra
+FLAGS = -std=c++98 -Wall -Werror -Wextra -g
 
 CC = c++
 
