@@ -3,9 +3,9 @@
 # include "ClapTrap.hpp"
 # define CONST_MSG "\033[1;32mDefault constructor ClapTrap called\033[0m"
 # define CONST_N_MSG "\033[1;32mParametizered constructor ClapTrap called, name: \033[0m"
-# define CPY_CONST_MSG "\033[1;32mCopy constructor called\033[0m"
+# define CPY_CONST_MSG "\033[1;32mCopy constructor ClapTrap called\033[0m"
 # define CPY_ASSIG_OP_MSG "Copy assignment operator called"
-# define DEST_MSG "\033[1;31mDestructor called\033[0m"
+# define DEST_MSG "\033[1;31mDestructor ClapTrap called\033[0m"
 
 ClapTrap::ClapTrap( void )
 	: Name_("Empty"), Hit_points_(MAX_HP), Energy_points_(10), Attac_damage_(10)
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap( std::string Name )
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << DEST_MSG << std::endl;
+	std::cout << DEST_MSG << " for Name: " << Name_ << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &src )
@@ -83,7 +83,7 @@ void ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->Energy_points_ == 0)
 	{
-		std::cout << "ClapTrap " << this->Name_ << " has no energy enough to attack" 
+		std::cout << "ClapTrap " << this->Name_ << " has no energy enough to be repaired" 
 			<< std::endl;
 		return ;
 	}

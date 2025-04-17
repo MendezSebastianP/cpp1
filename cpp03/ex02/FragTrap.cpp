@@ -4,9 +4,9 @@
 # include "ClapTrap.hpp"
 # define CONST_MSG "\033[1;32mDefault constructor FragTrap called\033[0m"
 # define CONST_N_MSG "\033[1;32mParametizered constructor FragTrap called, name: \033[0m"
-# define CPY_CONST_MSG "\033[1;32mCopy constructor called\033[0m"
+# define CPY_CONST_MSG "\033[1;32mCopy constructor FragTrap called\033[0m"
 # define CPY_ASSIG_OP_MSG "Copy assignment operator called"
-# define DEST_MSG "\033[1;31mDestructor called\033[0m"
+# define DEST_MSG "\033[1;31mDestructor FragTrap called\033[0m"
 
 
 FragTrap::FragTrap( void )
@@ -30,7 +30,7 @@ FragTrap::FragTrap( std::string Name )
 
 FragTrap::~FragTrap( void )
 {
-	std::cout << DEST_MSG << std::endl;
+	std::cout << DEST_MSG << " for Name: " << Name_ << std::endl;
 }
 
 FragTrap::FragTrap( FragTrap const &src )
@@ -92,7 +92,7 @@ void FragTrap::beRepaired( unsigned int amount )
 {
 	if (this->Energy_points_ == 0)
 	{
-		std::cout << "FragTrap " << this->Name_ << " has no energy enough to attack" 
+		std::cout << "FragTrap " << this->Name_ << " has no energy enough to be repaired" 
 			<< std::endl;
 		return ;
 	}

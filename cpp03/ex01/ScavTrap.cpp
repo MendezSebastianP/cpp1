@@ -4,9 +4,9 @@
 # include "ClapTrap.hpp"
 # define CONST_MSG "\033[1;32mDefault constructor ScavTrap called\033[0m"
 # define CONST_N_MSG "\033[1;32mParametizered constructor ScavTrap called, name: \033[0m"
-# define CPY_CONST_MSG "\033[1;32mCopy constructor called\033[0m"
+# define CPY_CONST_MSG "\033[1;32mCopy constructor ScavTrap called\033[0m"
 # define CPY_ASSIG_OP_MSG "Copy assignment operator called"
-# define DEST_MSG "\033[1;31mDestructor called\033[0m"
+# define DEST_MSG "\033[1;31mDestructor ScavTrap called\033[0m"
 
 
 ScavTrap::ScavTrap( void )
@@ -15,6 +15,7 @@ ScavTrap::ScavTrap( void )
 	this->Hit_points_ = MAX_HP_S;
 	this->Energy_points_ = 50;
 	this->Attac_damage_ = 20;
+	this->guardgatemode = false;
 	std::cout << CONST_MSG << std::endl;
 }
 
@@ -30,7 +31,7 @@ ScavTrap::ScavTrap( std::string Name )
 
 ScavTrap::~ScavTrap( void )
 {
-	std::cout << DEST_MSG << std::endl;
+	std::cout << DEST_MSG << " for Name: " << Name_ << std::endl;
 }
 
 ScavTrap::ScavTrap( ScavTrap const &src )
@@ -92,7 +93,7 @@ void ScavTrap::beRepaired( unsigned int amount )
 {
 	if (this->Energy_points_ == 0)
 	{
-		std::cout << "ScavTrap " << this->Name_ << " has no energy enough to attack" 
+		std::cout << "ScavTrap " << this->Name_ << " has no energy enough to be repaired" 
 			<< std::endl;
 		return ;
 	}
@@ -110,7 +111,13 @@ void ScavTrap::beRepaired( unsigned int amount )
 
 void ScavTrap::guardGate( void )
 {
-	std::cout << "ScavTrap " << this->Name_ << " just entered in Gate Keeper Mode" 
+	if (this->guardgatemode)
+		std::cout << "ScavTrap " << this->Name_ << " is already in Gate Keeper Mode" << std::endl;
+	else
+	{
+		this->guardgatemode = true;
+		std::cout << "ScavTrap " << this->Name_ << " just entered in Gate Keeper Mode" 
 			<< std::endl;
+	}
 }
 

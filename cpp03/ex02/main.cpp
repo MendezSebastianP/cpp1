@@ -3,8 +3,6 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-
-// modify the message from all functions, be careful with attack, is not right
 int main( void )
 {
 	ClapTrap a( "Seb ");
@@ -18,6 +16,7 @@ int main( void )
 	b.beRepaired(3);
 	b.takeDamage(7);
 	c.beRepaired( 50 );
+	c.guardGate();
 	c.guardGate();
 	d.highFivesGuys();
 	for (size_t i = 0; i < 10; i++)
