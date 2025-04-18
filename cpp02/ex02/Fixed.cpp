@@ -85,6 +85,37 @@ Fixed Fixed::operator/( Fixed const &rhs )
 	return (this->toFloat() / rhs.toFloat());
 }
 
+bool operator==( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() == rhs.toFloat());
+}
+
+bool operator!=( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() != rhs.toFloat());
+}
+
+bool operator<=( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() <= rhs.toFloat());
+}
+
+bool operator>=( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() >= rhs.toFloat());
+}
+
+bool operator<( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() < rhs.toFloat());
+}
+
+bool operator>( Fixed const &lhs, Fixed const &rhs )
+{
+	return (lhs.toFloat() > rhs.toFloat());
+}
+
+
 Fixed::Fixed( int const vfixe )
 {
 	if (DEBUG_MODE_CONST_DEST)

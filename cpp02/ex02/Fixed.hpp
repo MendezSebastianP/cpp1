@@ -35,6 +35,12 @@ class Fixed {
 		static const int bits_n_ = 8;
 };
 
+bool operator ==( Fixed const &lhs, Fixed const &rhs );
+bool operator !=( Fixed const &lhs, Fixed const &rhs );
+bool operator <=( Fixed const &lhs, Fixed const &rhs );
+bool operator >=( Fixed const &lhs, Fixed const &rhs );
+bool operator <( Fixed const &lhs, Fixed const &rhs );
+bool operator >( Fixed const &lhs, Fixed const &rhs );
 std::ostream &operator <<( std::ostream &o,  Fixed const &rhs );
 
 #endif
