@@ -1,27 +1,17 @@
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 # include <iostream>
 # include <cctype>
-# define MAX_HP 10
+# include "Animal.hpp"
 
-class ClapTrap {
+class Dog : public Animal 
+{
     public:
 	// canonic
-	ClapTrap( void );
-	ClapTrap( std::string Name );
-	~ClapTrap( void );
-	ClapTrap( ClapTrap const &src);
-	ClapTrap & operator =( ClapTrap const & rhs);
-
-	void attack( const std::string& target );
-	void takeDamage( unsigned int amount );
-	void beRepaired( unsigned int amount );
-
-    private:
-        std::string Name_;
-		int Hit_points_;
-		int Energy_points_;
-		int Attac_damage_;
+	Dog( void );
+	~Dog( void );
+	Dog( Dog const &src);
+	Dog & operator =( Dog const & rhs);
 };
 
 

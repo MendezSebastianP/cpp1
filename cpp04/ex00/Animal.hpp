@@ -2,18 +2,17 @@
 # define ANIMAL_HPP
 # include <iostream>
 # include <cctype>
-# define MAX_HP 10
 
 class Animal {
     public:
 	// canonic
 	Animal( void );
-	~Animal( void );
+	virtual ~Animal( void );
 	Animal( Animal const &src);
 	Animal & operator =( Animal const & rhs);
 
-	void makeSound( void );
-	void getType( void );
+	virtual void makeSound( void ) const;
+	virtual std::string getType( void ) const;
 	
     protected:
 	std::string type;
