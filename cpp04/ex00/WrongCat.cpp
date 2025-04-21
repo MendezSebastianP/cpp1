@@ -20,6 +20,7 @@ WrongCat::~WrongCat( void )
 }
 
 WrongCat::WrongCat( WrongCat const &src )
+	: WrongAnimal(src)
 {
 	std::cout << CPY_CONST_MSG << std::endl;
 	this->type = src.type;
@@ -34,6 +35,6 @@ WrongCat & WrongCat::operator= (WrongCat const & rhs)
 
 void WrongCat::makeSound( void ) const
 {
-std::cout << "Mew mew (I'm better than you) -.-" << std::endl;
+	std::cout << " (Wrong) Mew mew (I'm better than you) -.-" << std::endl;
 }
 

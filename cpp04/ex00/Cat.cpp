@@ -21,6 +21,7 @@ Cat::~Cat( void )
 }
 
 Cat::Cat( Cat const &src )
+	: Animal(src)
 {
 	std::cout << CPY_CONST_MSG << std::endl;
 	this->type = src.type;
@@ -31,5 +32,10 @@ Cat & Cat::operator= (Cat const & rhs)
 	std::cout << CPY_ASSIG_OP_MSG << std::endl;
 	this->type = rhs.type;
 	return *this;
+}
+
+void Cat::makeSound( void ) const
+{
+	std::cout << "Mew mew (I'm better than you) -.- " << std::endl;
 }
 

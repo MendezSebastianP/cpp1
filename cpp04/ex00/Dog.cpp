@@ -21,6 +21,7 @@ Dog::~Dog( void )
 }
 
 Dog::Dog( Dog const &src )
+	: Animal(src)
 {
 	std::cout << CPY_CONST_MSG << std::endl;
 	this->type = src.type;
@@ -33,3 +34,7 @@ Dog & Dog::operator= (Dog const & rhs)
 	return *this;
 }
 
+void Dog::makeSound( void ) const
+{
+	std::cout << "Baaaaaaaark bark bark :D" << std::endl;
+}
