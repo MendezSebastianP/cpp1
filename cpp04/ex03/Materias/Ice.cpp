@@ -10,7 +10,7 @@
 
 
 Ice::Ice( void )
-	: type("Ice")
+	: type("ice")
 {
 	std::cout << CONST_MSG << std::endl;
 }

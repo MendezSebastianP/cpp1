@@ -7,8 +7,3 @@
 # define CPY_CONST_MSG "\033[1;32mCopy constructor I_MateriaSource called\033[0m"
 # define CPY_ASSIG_OP_MSG "Copy assignment operator called"
 # define DEST_MSG "\033[1;31mDestructor I_MateriaSource called\033[0m"
-
-I_MateriaSource::~I_MateriaSource( void )
-{
-	std::cout << DEST_MSG << std::endl;
-}

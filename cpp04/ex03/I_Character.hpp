@@ -5,6 +5,8 @@
 # include "Materias/A_Materia.hpp"
 # define N_MATERIA 4
 
+class A_Materia;
+
 class I_Character
 {
 	public:
@@ -13,9 +15,6 @@ class I_Character
 	virtual void equip(A_Materia* m) = 0;
 	virtual void unequip(int idx) = 0;
 	virtual void use(int idx, I_Character& target) = 0;
-
-	private:
-	A_Materia *materia_[N_MATERIA];
 };
 
 # endif

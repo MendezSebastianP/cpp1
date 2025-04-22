@@ -38,3 +38,8 @@ std::string const & A_Materia::getType() const
 	return this->type;
 }
 
+void A_Materia::use(I_Character& target)
+{
+	(void)target;
+	return ;
+}

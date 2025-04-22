@@ -2,7 +2,7 @@
 # define MATERIASOURCE_HPP
 # include <iostream>
 # include <cctype>
-# include "A_Materia.hpp"
+# include "Materias/A_Materia.hpp"
 # include "I_MateriaSource.hpp"
 
 class MateriaSource : public I_MateriaSource
@@ -19,6 +19,7 @@ class MateriaSource : public I_MateriaSource
 
 	private:
 	A_Materia *materia_[N_MATERIA];
+	std::string meteria_type_;
 	int nmateria_;
 };
 

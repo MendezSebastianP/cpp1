@@ -15,29 +15,32 @@ MateriaSource::MateriaSource( void )
 	{
 		this->materia_[i] = NULL;
 	}
-	materia_[0] = NULL;
 	std::cout << CONST_MSG << std::endl;
 }
 
 MateriaSource::~MateriaSource( void )
 {
-	for (size_t i = 0; i < N_MATERIA; i++)
-	{
-		this->materia_[i] = NULL;
-	}
-	materia_[0] = NULL;
 	std::cout << DEST_MSG << std::endl;
 }
 
 MateriaSource::MateriaSource( MateriaSource const &src )
 {
+	for (size_t i = 0; i < N_MATERIA; i++)
+	{
+		this->materia_[i] = src.materia_[i];
+	}
+	this->nmateria_ = src.nmateria_;
 	std::cout << CPY_CONST_MSG << std::endl;
-
 }
 
 MateriaSource & MateriaSource::operator= (MateriaSource const & rhs)
 {
 	std::cout << CPY_ASSIG_OP_MSG << std::endl;
+	for (size_t i = 0; i < N_MATERIA; i++)
+	{
+		this->materia_[i] = rhs.materia_[i];
+	}
+	this->nmateria_ = rhs.nmateria_;
 	return *this;
 }
 
@@ -53,6 +56,17 @@ void MateriaSource::learnMateria(A_Materia* m)
 
 A_Materia *MateriaSource::createMateria(std::string const & type)
 {
-	
+	int i = 0;
+	std::cerr << "here2" << this->materia_[0]->getType() << std::endl;
+
+	while (type != this->materia_[i]->getType() && i < N_MATERIA)
+	{
+		std::cerr << "here1" << std::endl;
+		i++;
+	}
+	if (i == 4)
+		return 0;
+	else
+		return this->materia_[i];
 }
 

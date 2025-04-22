@@ -5,6 +5,8 @@
 # include "../I_Character.hpp"
 # define N_MATERIA 4
 
+class I_Character;
+
 class A_Materia
 {
 	protected:

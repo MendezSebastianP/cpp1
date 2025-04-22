@@ -10,7 +10,7 @@
 
 
 Cure::Cure( void )
-	: type("Cure")
+	: type("cure")
 {
 	std::cout << CONST_MSG << std::endl;
 }
