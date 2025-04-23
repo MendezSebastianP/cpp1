@@ -13,6 +13,11 @@ A_Materia::A_Materia( void )
 {
 	std::cout << CONST_MSG << std::endl;
 }
+A_Materia::A_Materia( std::string type)
+	: type(type)
+{
+	std::cout << CONST_N_MSG << type << std::endl;
+}
 
 A_Materia::~A_Materia( void )
 {
@@ -41,5 +46,6 @@ std::string const & A_Materia::getType() const
 void A_Materia::use(I_Character& target)
 {
 	(void)target;
+	std::cout << "Wrong..." << std::endl;
 	return ;
 }

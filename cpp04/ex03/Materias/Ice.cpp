@@ -10,7 +10,7 @@
 
 
 Ice::Ice( void )
-	: type("ice")
+	: A_Materia("ice")
 {
 	std::cout << CONST_MSG << std::endl;
 }
@@ -21,10 +21,9 @@ Ice::~Ice( void )
 }
 
 Ice::Ice( Ice const &src )
+	: A_Materia(src)
 {
 	std::cout << CPY_CONST_MSG << std::endl;
-	this->type = src.type;
-
 }
 
 Ice & Ice::operator= (Ice const & rhs)

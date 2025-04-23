@@ -60,10 +60,11 @@ std::string const &Character::getName() const
 
 void Character::equip(A_Materia* m)
 {
+	int i = 0;
 	if (nmateria_ < N_MATERIA)
 	{
-		for (size_t i = 0; this->materia_[i]; i++)
-			this->materia_[i] = m;
+		while ( i < N_MATERIA && this->materia_[i]) {i++;}
+		this->materia_[i] = m;
 		nmateria_++;
 	}
 }
@@ -79,7 +80,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, I_Character& target)
 {
-	if(this->materia_[idx])
+	if(idx >= 0 && idx < N_MATERIA && this->materia_[idx])
 		this->materia_[idx]->use(target);
 }
 

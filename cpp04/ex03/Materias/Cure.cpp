@@ -10,7 +10,7 @@
 
 
 Cure::Cure( void )
-	: type("cure")
+	: A_Materia("cure")	
 {
 	std::cout << CONST_MSG << std::endl;
 }
@@ -21,10 +21,9 @@ Cure::~Cure( void )
 }
 
 Cure::Cure( Cure const &src )
+	: A_Materia(src)
 {
 	std::cout << CPY_CONST_MSG << std::endl;
-	this->type = src.type;
-
 }
 
 Cure & Cure::operator= (Cure const & rhs)
@@ -50,3 +49,4 @@ void Cure::use(I_Character& target)
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 	return;
 }
+

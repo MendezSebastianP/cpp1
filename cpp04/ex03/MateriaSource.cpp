@@ -20,6 +20,10 @@ MateriaSource::MateriaSource( void )
 
 MateriaSource::~MateriaSource( void )
 {
+	for (size_t i = 0; i < N_MATERIA && this->materia_[i]; i++)
+	{
+		delete this->materia_[i];
+	}
 	std::cout << DEST_MSG << std::endl;
 }
 
@@ -44,12 +48,16 @@ MateriaSource & MateriaSource::operator= (MateriaSource const & rhs)
 	return *this;
 }
 
+#include "Materias/Ice.hpp"
 void MateriaSource::learnMateria(A_Materia* m)
 {
+	int i = 0;
 	if (nmateria_ < N_MATERIA)
 	{
-		for (size_t i = 0; this->materia_[i]; i++)
-			this->materia_[i] = m;
+		while (i < N_MATERIA && this->materia_[i]) {i++;}
+		if (i > 3)
+			return ;
+		this->materia_[i] = m;
 		nmateria_++;
 	}
 }
@@ -57,11 +65,9 @@ void MateriaSource::learnMateria(A_Materia* m)
 A_Materia *MateriaSource::createMateria(std::string const & type)
 {
 	int i = 0;
-	std::cerr << "here2" << this->materia_[0]->getType() << std::endl;
 
-	while (type != this->materia_[i]->getType() && i < N_MATERIA)
+	while (i < N_MATERIA && this->materia_[i] && type != this->materia_[i]->getType())
 	{
-		std::cerr << "here1" << std::endl;
 		i++;
 	}
 	if (i == 4)

@@ -14,6 +14,7 @@ class A_Materia
 
 	public:
 	A_Materia( void );
+	A_Materia( std::string type);
 	virtual ~A_Materia( void );
 	A_Materia( A_Materia const &type);
 	A_Materia & operator =( A_Materia const & rhs);

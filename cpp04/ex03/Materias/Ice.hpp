@@ -6,8 +6,8 @@
 
 class Ice : public A_Materia
 {
-	protected:
-	std::string type;
+	// protected:
+	// std::string type;
 
 	public:
 	Ice( void );

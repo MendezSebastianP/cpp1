@@ -6,8 +6,8 @@
 
 class Cure : public A_Materia
 {
-	protected:
-	std::string type;
+	// protected:
+	// std::string type;
 
 	public:
 	Cure( void );

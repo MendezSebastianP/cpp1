@@ -1,24 +1,33 @@
-SRC = main.cpp Character.cpp I_Character.cpp I_MateriaSource.cpp MateriaSource.cpp \
-      Materias/A_Materia.cpp Materias/Cure.cpp Materias/Ice.cpp
-NAME = Characters
-TRASH_DIR = .trash
+CC        := c++
+CXXFLAGS  := -std=c++98 -Wall -Werror -Wextra -g
+DEPFLAGS  := -MMD -MP
+FLAGS     := $(CXXFLAGS) $(DEPFLAGS)
 
-OBJ = $(addprefix $(TRASH_DIR)/, $(SRC:.cpp=.o))
-DEP = $(addprefix $(TRASH_DIR)/, $(SRC:.cpp=.d))
+SRCS      := main.cpp \
+             Character.cpp \
+             I_Character.cpp \
+             I_MateriaSource.cpp \
+             MateriaSource.cpp \
+             Materias/A_Materia.cpp \
+             Materias/Cure.cpp \
+             Materias/Ice.cpp
 
-FLAGS = -std=c++98 -Wall -Werror -Wextra -g -MMD -MP
-CC = c++
+TRASH_DIR := .trash
+OBJ       := $(patsubst %.cpp,$(TRASH_DIR)/%.o,$(SRCS))
+DEP       := $(OBJ:.o=.d)
 
--include $(DEP)
+NAME      := Characters
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJ) -o $@
 
 $(TRASH_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(FLAGS) -c $< -o $@ -MT $@ -MF $(@:.o=.d)
+	$(CC) $(FLAGS) -c $< -o $@
+
+-include $(DEP)
 
 clean:
 	rm -rf $(TRASH_DIR)
