@@ -67,12 +67,9 @@ A_Materia *MateriaSource::createMateria(std::string const & type)
 	int i = 0;
 
 	while (i < N_MATERIA && this->materia_[i] && type != this->materia_[i]->getType())
-	{
 		i++;
-	}
-	if (i == 4)
-		return 0;
-	else
-		return this->materia_[i];
+	if (i >= N_MATERIA || materia_[i] == NULL)
+		return NULL;
+	return this->materia_[i]->clone();
 }
 

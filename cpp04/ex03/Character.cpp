@@ -27,11 +27,14 @@ Character::Character( std::string name )
 		this->materia_[i] = NULL;
 	}
 	materia_[0] = NULL;
-	std::cout << CONST_N_MSG << std::endl;
+	std::cout << CONST_N_MSG << name << std::endl;
 }
 
 Character::~Character( void )
 {
+	for (int i = 0; i < N_MATERIA; ++i) {
+        delete materia_[i];
+    }
 	std::cout << DEST_MSG << std::endl;
 }
 

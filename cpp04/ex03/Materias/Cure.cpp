@@ -40,7 +40,6 @@ std::string const & Cure::getType() const
 
 Cure *Cure::clone() const
 {
-
 	return new Cure(*this);
 }
 
